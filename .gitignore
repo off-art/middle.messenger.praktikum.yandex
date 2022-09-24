@@ -1,0 +1,19 @@
+
+.cache/
+coverage/
+!dist/index.html
+dist/
+*.log
+node_modules/
+
+# OS generated files
+ehthumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+Thumbs.db
+/.parcel-cache/
+.Trashes
+/.idea/
+parcel-cache/

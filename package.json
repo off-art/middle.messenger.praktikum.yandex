@@ -1,0 +1,24 @@
+{
+  "name": "middle.messenger.praktikum.yandex",
+  "version": "1.0.0",
+  "description": "Учебный проект от Яндекс.Практикум Мидл фронтенд-разработчик",
+  "scripts": {
+    "dev": "parcel src/index.html --open --no-cache",
+    "build": "parcel build src/index.html",
+    "start": "npm run build && node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-less": "^2.6.2",
+    "express": "^4.18.1",
+    "parcel": "^2.6.2",
+    "parcel-transformer-hbs": "^1.0.4",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.7",
+    "express": "^4.18.1"
+  }
+}
