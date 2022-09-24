@@ -15,7 +15,7 @@ const navLinks = [
   "/incorrectName",
 ];
 
-navLinks.forEach((link) => {
+navLinks.forEach(() => {
   app.get('/*', (req, res) => {
     res.sendFile(__dirname + "/dist/index.html");
   });

@@ -1,11 +1,13 @@
+@import "../../style";
+
 .chat-item {
   height: 70px;
   padding: 10px;
   border-radius: 8px;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid @color-whisper;
   display: flex;
   &:hover {
-    background: #e4edfd;
+    background: @color-light-blue;
   }
   &--logo {
     margin-right: 10px;
@@ -13,7 +15,7 @@
   &--logo-img {
     width: 47px;
     height: 47px;
-    background: #efefef;
+    background: @color-white-smoke;
     border-radius: 50%;
   }
 
@@ -33,7 +35,7 @@
     }
     &-time {
       font-size: 9px;
-      color: #999999;
+      color: @color-dark-gray;
     }
   }
 
@@ -43,7 +45,7 @@
     align-items: center;
     flex: 1;
     &-text {
-      color: #999999;
+      color: @color-dark-gray;
       font-size: 12px;
       line-height: 15px;
       align-self: start;
@@ -62,8 +64,8 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        color: #ffffff;
-        background: #3369f3;
+        color: @color-white;
+        background: @color-royal-blue;
         display: flex;
         justify-content: center;
         align-items: center;

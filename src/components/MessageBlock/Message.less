@@ -1,5 +1,7 @@
+@import '../../style';
+
 .messageBlock {
-  background: #f8f8f8;
+  background: @color-white-light;
   padding: 11px;
   border-radius: 0 8px 8px 8px;
   margin-bottom: 10px;
@@ -11,13 +13,13 @@
   &-from-me {
     align-self: end;
     border-radius: 8px 8px 0 8px;
-    background: #e4edfd;
+    background: @color-light-blue;
   }
 
   span {
     float: right;
     font-size: 9px;
-    color: #999999;
+    color: @color-dark-gray;
     bottom: -10px;
     margin-left: 10px;
     position: relative;

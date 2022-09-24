@@ -1,17 +1,19 @@
+@import '../../style';
+
 .info-block {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
   &:not(:last-child) {
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid @color-whisper;
   }
 
   &--info {
-    color: #999999;
+    color: @color-dark-gray;
   }
 
   &--btn {
-    color: #3369f3;
+    color: @color-royal-blue;
     background: transparent;
   }
 }
