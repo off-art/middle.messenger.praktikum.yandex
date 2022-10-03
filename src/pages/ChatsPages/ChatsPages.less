@@ -1,135 +1,135 @@
 @import '../../style';
 
 .chats-wrapper {
-  width: 100vw;
-  height: 100vh;
-  font-weight: 500;
-  color: @color-black;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-weight: 500;
+    color: @color-black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .chats {
-  flex: 0 0 310px;
-  background: @color-snow;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-
-  &-header {
-    flex: 0 0 100px;
+    flex: 0 0 310px;
+    background: @color-snow;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 14px 10px;
-    border-bottom: 1px solid @color-whisper;
 
-    button {
-      margin: 6px 0 21px 0;
-      background: transparent;
-      width: 70px;
-      align-self: end;
-      color: @color-dark-gray;
+    &-header {
+        flex: 0 0 100px;
+        display: flex;
+        flex-direction: column;
+        padding: 14px 10px;
+        border-bottom: 1px solid @color-whisper;
+
+        button {
+            margin: 6px 0 21px 0;
+            background: transparent;
+            width: 70px;
+            align-self: end;
+            color: @color-dark-gray;
+        }
+
+        input {
+            background: @color-white-smoke;
+            border-radius: 5px;
+            height: 32px;
+            text-align: center;
+
+            &::placeholder {
+                text-align: center;
+                color: @color-dark-gray;
+            }
+        }
     }
 
-    input {
-      background: @color-white-smoke;
-      border-radius: 5px;
-      height: 32px;
-      text-align: center;
-
-      &::placeholder {
-        text-align: center;
-        color: @color-dark-gray;
-      }
+    &-body {
+        overflow-y: auto;
+        flex: 1;
     }
-  }
-
-  &-body {
-    overflow-y: auto;
-    flex: 1;
-  }
 }
 
 .chats-messages {
-  flex: 1 1 auto;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 10px 20px;
-
-  &--head {
-    border-bottom: 1px solid @color-whisper;
-    display: flex;
-    padding-bottom: 10px;
-
-    &-logo {
-      width: 34px;
-      height: 34px;
-      background: @color-white-smoke;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
-
-    &-name {
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      flex: 1;
-    }
-
-    &-option {
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      font-size: 26px;
-    }
-  }
-
-  &--body {
-    flex: 1;
-    overflow-y: auto;
-    padding-top: 10px;
+    flex: 1 1 auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
-  }
+    padding: 10px 20px;
 
-  &--input {
-    border-top: 1px solid @color-whisper;
-    padding-top: 10px;
-    display: flex;
-    align-items: center;
+    &--head {
+        border-bottom: 1px solid @color-whisper;
+        display: flex;
+        padding-bottom: 10px;
 
-    &-files {
-      height: 32px;
-      width: 32px;
-      background: @color-dark-gray;
+        &-logo {
+            width: 34px;
+            height: 34px;
+            background: @color-white-smoke;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        &-name {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        &-option {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            font-size: 26px;
+        }
     }
 
-    &-input {
-      background: @color-white-smoke;
-      border-radius: 30px;
-      padding: 10px 20px;
-      margin: 0 10px;
-      flex: 1;
-      resize: none;
-
-      &::placeholder {
-        color: @color-dark-gray;
-      }
+    &--body {
+        flex: 1;
+        overflow-y: auto;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
     }
 
-    &-submit {
-      background: @color-royal-blue;
-      border-radius: 50%;
-      width: 28px;
-      height: 28px;
-      color: @color-white;
-      font-size: 18px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    &--input {
+        border-top: 1px solid @color-whisper;
+        padding-top: 10px;
+        display: flex;
+        align-items: center;
+
+        &-files {
+            height: 32px;
+            width: 32px;
+            background: @color-dark-gray;
+        }
+
+        &-input {
+            background: @color-white-smoke;
+            border-radius: 30px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            flex: 1;
+            resize: none;
+
+            &::placeholder {
+                color: @color-dark-gray;
+            }
+        }
+
+        &-submit {
+            background: @color-royal-blue;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            color: @color-white;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
-  }
 }

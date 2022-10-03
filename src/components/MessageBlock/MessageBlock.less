@@ -1,0 +1,27 @@
+@import '../../style';
+
+.messageBlock {
+    background: @color-white-light;
+    padding: 11px;
+    border-radius: 0 8px 8px 8px;
+    margin-bottom: 10px;
+    max-width: 60%;
+    align-self: start;
+    text-align: start;
+    line-height: 15px;
+
+    &-from-me {
+        align-self: end;
+        border-radius: 8px 8px 0 8px;
+        background: @color-light-blue;
+    }
+
+    span {
+        float: right;
+        font-size: 9px;
+        color: @color-dark-gray;
+        bottom: -10px;
+        margin-left: 10px;
+        position: relative;
+    }
+}
