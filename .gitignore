@@ -11,6 +11,7 @@ ehthumbs.db
 .DS_Store
 .DS_Store?
 ._*
+.env
 .Spotlight-V100
 Thumbs.db
 /.parcel-cache/

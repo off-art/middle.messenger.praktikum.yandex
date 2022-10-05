@@ -42,7 +42,7 @@ class Block<TProps> {
         eventBus.emit(Block.EVENTS.INIT);
     }
 
-    _getChildren(propsAndChildren: TProps) {
+    private _getChildren(propsAndChildren: TProps) {
         const children: { [key: string]: Block<TProps> } = {};
         const props: ITempObj = {};
 
@@ -58,14 +58,14 @@ class Block<TProps> {
         return { children, props };
     }
 
-    _registerEvents(eventBus: EventBus): void {
+    private _registerEvents(eventBus: EventBus): void {
         eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
         eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
         eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
         eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
     }
 
-    _createResources(): void {
+    private _createResources(): void {
         const { tagName } = this._meta;
         this._element = this._createDocumentElement(tagName);
     }
@@ -76,7 +76,7 @@ class Block<TProps> {
         this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
     }
 
-    _componentDidMount(): void {
+    private _componentDidMount(): void {
         this.componentDidMount();
 
         Object.values(this.children).forEach((child) => {
@@ -94,7 +94,7 @@ class Block<TProps> {
         this.eventBus().emit(Block.EVENTS.FLOW_CDM);
     }
 
-    _componentDidUpdate(oldProps: TProps, newProps: TProps): void {
+    private _componentDidUpdate(oldProps: TProps, newProps: TProps): void {
         const response = this.componentDidUpdate(oldProps, newProps);
         if (response) {
             this._render();
@@ -108,7 +108,7 @@ class Block<TProps> {
         return true;
     }
 
-    _addEvents() {
+    private _addEvents() {
         const { events = {} }: any = this.props;
 
         Object.keys(events).forEach((eventName) => {
@@ -123,7 +123,7 @@ class Block<TProps> {
         });
     }
 
-    _addClassNames() {
+    private _addClassNames() {
         const { className = '' }: any = this.props;
         if (!className) return;
         if (isArray(className)) {
@@ -136,7 +136,7 @@ class Block<TProps> {
         }
     }
 
-    _addAttributes() {
+    private _addAttributes() {
         const { attr = {} }: any = this.props;
 
         Object.keys(attr).forEach((attrName) => {
@@ -144,7 +144,7 @@ class Block<TProps> {
         });
     }
 
-    _removeEvents() {
+    private _removeEvents() {
         const { events = {} }: any = this.props;
 
         Object.keys(events).forEach((eventName) => {
@@ -171,7 +171,7 @@ class Block<TProps> {
         return this._element;
     }
 
-    _render(): void {
+    private _render(): void {
         const block = this.render();
         this._removeEvents();
         this._element.innerHTML = '';
@@ -189,7 +189,7 @@ class Block<TProps> {
         return this.element;
     }
 
-    _makePropsProxy(props: any): TProps {
+    private _makePropsProxy(props: any): TProps {
         const self = this;
 
         return new Proxy(props as any, {
@@ -244,7 +244,7 @@ class Block<TProps> {
         return fragment.content;
     }
 
-    _createDocumentElement(tagName: string) {
+    private _createDocumentElement(tagName: string) {
         const element = document.createElement(tagName);
         // @ts-ignore
         if (this.props.settings?.withInternalID) {

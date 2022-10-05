@@ -4,9 +4,7 @@ import { TPropsDefault } from '../../utils/Interfaces';
 
 import './ProfileChangeForm.less';
 
-type TProps = {} & TPropsDefault;
-
-export default class ProfileChangeForm extends Block<TProps> {
+export default class ProfileChangeForm extends Block<TPropsDefault> {
     render() {
         return this.compile(tpl, {
             profileData: this.props.profileData,
