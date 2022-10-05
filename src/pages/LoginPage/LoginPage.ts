@@ -55,6 +55,7 @@ const LoginPage = new Wrapper({
                     inputFields.forEach((current: HTMLInputElement) => {
                         data[current.id] = current.value;
                     });
+                    console.log(data);
                 }
             },
         },
