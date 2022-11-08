@@ -6,35 +6,20 @@ import ProfilePage from './pages/ProfilePage/ProfilePage';
 import Error500Page from './pages/Error500/Error500';
 import ProfileChangePage from './pages/ProfileChangePage/ProfileChangePage';
 import Error404Page from './pages/Error404/Error404';
-import renderDOM from './utils/renderDOM';
+import Router from './utils/Router';
 
 import './style.less';
 import './initStyles.less';
 
-const path = window.location.pathname;
+const router = new Router('root');
 
-switch (path) {
-case '/':
-    renderDOM('root', ChatsPage);
-    break;
-case '/login':
-    renderDOM('root', LoginPage);
-    break;
-case '/profile':
-    renderDOM('root', ProfilePage);
-    break;
-case '/signup':
-    renderDOM('root', SignupPage);
-    break;
-case '/password-change':
-    renderDOM('root', ChangePass);
-    break;
-case '/profile-change':
-    renderDOM('root', ProfileChangePage);
-    break;
-case '/500':
-    renderDOM('root', Error500Page);
-    break;
-default:
-    renderDOM('root', Error404Page);
-}
+router
+    .use('/', LoginPage)
+    .use('/500', Error500Page)
+    .use('/signup', SignupPage)
+    .use('/messenger', ChatsPage)
+    .use('/profile', ProfilePage)
+    .use('/profile-change', ProfileChangePage)
+    .use('/password-change', ChangePass)
+    .use('*', Error404Page)
+    .start();

@@ -19,7 +19,7 @@ export default class ChangeInfoBlock extends Block<TProps> {
             info: this.props.info,
             id: this.props.id,
             type: this.props.type,
-            classNames: this.props.classNames,
+            className: this.props.className,
             required: this.props.required,
         });
     }

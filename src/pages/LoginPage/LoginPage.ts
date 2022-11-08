@@ -2,7 +2,7 @@ import FormInput from '../../components/FormInput/FormInput';
 import SignForm from '../../containers/SignForm/SignForm';
 import Wrapper from '../../layout/Wrapper/Wrapper';
 import Validation from '../../utils/Validation';
-import { ITempObj } from '../../utils/Interfaces';
+import { LoginController } from '../../controllers/login.ctrl';
 
 const validation = new Validation();
 
@@ -10,6 +10,11 @@ const templateForm = [
     { id: 'login', name: 'Логин', type: 'text' },
     { id: 'password', name: 'Пароль', type: 'password' },
 ];
+
+interface LoginFormModel {
+    login: string;
+    password: string;
+}
 
 const forms = templateForm.map(
     (el) =>
@@ -51,11 +56,15 @@ const LoginPage = new Wrapper({
                 const target = event.target as HTMLFormElement;
                 if (validation.check(target)) {
                     const inputFields = target.querySelectorAll('[data-required=true]');
-                    const data: ITempObj = {};
+                    const data: LoginFormModel = {
+                        login: '',
+                        password: '',
+                    };
                     inputFields.forEach((current: HTMLInputElement) => {
+                        // @ts-ignore
                         data[current.id] = current.value;
                     });
-                    console.log(data);
+                    LoginController.login(data);
                 }
             },
         },

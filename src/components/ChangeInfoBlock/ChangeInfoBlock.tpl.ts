@@ -1,9 +1,10 @@
 export const tpl = `
-        <span class='change-info-line--item'>{{item}}</span>
-        <input class='change-info-line--input' id={{id}} value={{info}} type={{type}}
+        <span class='change-info-block--item'>{{item}}</span>
+        <input class='change-info-block--input' id={{id}} type={{type}}
         {{#if required}}
         data-required="{{required}}"
         {{/if}}
+        value={{info}}
         >
-        <span class='change-info-line--error'></span>
+        <span class='change-info-block--error'></span>
 `;

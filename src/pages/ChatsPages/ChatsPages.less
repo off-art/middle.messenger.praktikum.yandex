@@ -9,6 +9,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    &.active {
+        .chats-messages--hide {
+            display: none;
+        }
+    }
 }
 
 .chats {
@@ -50,6 +56,35 @@
         overflow-y: auto;
         flex: 1;
     }
+    &-footer {
+        border-top: 1px solid #eaeaea;
+        height: 55px;
+        padding: 10px;
+        font-size: 16px;
+        background: #efefef;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input {
+            margin-right: 10px;
+            font-size: 16px;
+            line-height: 28px;
+            border-radius: 10px;
+            width: 80%;
+            padding-left: 7px;
+        }
+        button {
+            background: @color-royal-blue;
+            width: 28px;
+            height: 28px;
+            color: white;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+    }
 }
 
 .chats-messages {
@@ -58,11 +93,26 @@
     display: flex;
     flex-direction: column;
     padding: 10px 20px;
+    position: relative;
+    &--hide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        background: #e5e5e5f5;
+        z-index: 10000;
+    }
 
     &--head {
         border-bottom: 1px solid @color-whisper;
         display: flex;
         padding-bottom: 10px;
+
 
         &-logo {
             width: 34px;
@@ -84,15 +134,50 @@
             display: flex;
             align-items: center;
             font-size: 26px;
+            width: 40px;
+            cursor: pointer;
+            justify-content: center;
+            position: relative;
+            &:hover {
+                background: @color-whisper;
+
+                .chats-messages--head-option-hide {
+                    opacity: 1;
+                    display: block;
+                }
+            }
+
+            &-hide {
+                font-size: 16px;
+                opacity: 0;
+                display: none;
+                position: absolute;
+                border-radius: 5px;
+                border: 1px solid @color-dark-gray;
+                top: 33px;
+                right: 0;
+                font-weight: 300;
+                background: white;
+                z-index: 1000;
+                div {
+                    width: 230px;
+                    padding: 10px;
+                    &:hover {
+                        background: @color-whisper;
+                    }
+                }
+            }
         }
     }
 
     &--body {
         flex: 1;
         overflow-y: auto;
-        padding-top: 10px;
-        display: flex;
-        flex-direction: column;
+        > div {
+            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     &--input {
