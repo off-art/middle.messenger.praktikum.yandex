@@ -37,6 +37,16 @@
             width: 70px;
             align-self: end;
             color: @color-dark-gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button:after {
+            content: '\279C';
+            color: @color-dark-gray;
+            font-size: 15px;
+            margin-left: 5px;
         }
 
         input {
@@ -45,13 +55,13 @@
             height: 32px;
             text-align: center;
 
+
             &::placeholder {
                 text-align: center;
                 color: @color-dark-gray;
             }
         }
     }
-
     &-body {
         overflow-y: auto;
         flex: 1;
@@ -85,6 +95,8 @@
             border-radius: 50%;
         }
     }
+
+
 }
 
 .chats-messages {
@@ -133,13 +145,16 @@
             font-weight: 600;
             display: flex;
             align-items: center;
-            font-size: 26px;
-            width: 40px;
+            font-size: 15px;
+            width: 25px;
+            height: 25px;
             cursor: pointer;
             justify-content: center;
             position: relative;
             &:hover {
                 background: @color-whisper;
+                border-radius: 50%;
+                color: @color-royal-blue;
 
                 .chats-messages--head-option-hide {
                     opacity: 1;
@@ -147,23 +162,43 @@
                 }
             }
 
+            &-add {
+                border-radius: 12px 12px 0 0;
+            }
+            &-add:before {
+                content: "✅";
+                color: red;
+                margin-right: 10px;
+            }
+
+            &-delete-user {
+                border-radius: 0 0 12px 12px ;
+            }
+
+            &-delete-user:before {
+                content: "❌";
+                margin-right: 10px;
+            }
+
             &-hide {
                 font-size: 16px;
                 opacity: 0;
                 display: none;
                 position: absolute;
-                border-radius: 5px;
-                border: 1px solid @color-dark-gray;
-                top: 33px;
-                right: 0;
+                background: @color-white;
+                box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+                border-radius: 12px;
+                top: 20px;
+                right: 10px;
                 font-weight: 300;
-                background: white;
                 z-index: 1000;
                 div {
+                    color: @color-black;
                     width: 230px;
                     padding: 10px;
                     &:hover {
-                        background: @color-whisper;
+
+                        background: @color-light-blue;
                     }
                 }
             }

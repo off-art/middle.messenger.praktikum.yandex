@@ -1,7 +1,7 @@
 export const tpl = `<div class='chats-wrapper'>
     <div class='chats'>
         <div class='chats-header'>
-            <button id='chats-btn-profile' >Профиль ></button>
+            <button id='chats-btn-profile' >Профиль</button>
             <input type='text' placeholder='Поиск' />
         </div>
         <div class='chats-body'>
@@ -18,11 +18,10 @@ export const tpl = `<div class='chats-wrapper'>
             <div class='chats-messages--head-logo'></div>
             <div class='chats-messages--head-name'>{{chatTitle}}</div>
             <div class='chats-messages--head-option'>
-            ⋮
+           ︙
             <div class='chats-messages--head-option-hide'>
                     <div class='chats-messages--head-option-add'>Добавить пользователя</div>
                     <div class='chats-messages--head-option-delete-user'>Удалить пользователя</div>
-                    <div class='chats-messages--head-option-delete'>Удалить чат</div>
             </div>
             </div>
         </div>

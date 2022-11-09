@@ -4,7 +4,9 @@ import { TPropsDefault } from '../../utils/Interfaces';
 
 import './Wrapper.less';
 
-export default class Wrapper extends Block<TPropsDefault> {
+type TProps = {} & TPropsDefault;
+
+export default class Wrapper extends Block<TProps> {
     render() {
         return this.compile(tpl, {
             children: this.children,
