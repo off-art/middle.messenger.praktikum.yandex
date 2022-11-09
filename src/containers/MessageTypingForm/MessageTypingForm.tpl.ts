@@ -5,6 +5,6 @@ export const tpl = `
                 placeholder='Сообщение'
                 data-required='true'
                 id='message'
-            ></input>
-            <input type='submit' class='message-typing-form-submit' value='>'>      
+            />
+            <input type='submit' class='message-typing-form-submit' value='➜'>      
 `;

@@ -15,11 +15,11 @@ export class UserSignUpController {
                         store.set('user', JSON.parse(responseData.responseText));
                         router.go('/messenger');
                     } else {
-                        window.alert('Ошибка запроса данных пользователя');
+                        window.alert(JSON.parse(response.response).reason);
                     }
                 });
             } else {
-                window.alert('Ошибка регистрации');
+                window.alert(JSON.parse(response.response).reason);
             }
         });
     }

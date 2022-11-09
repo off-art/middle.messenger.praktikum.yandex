@@ -8,24 +8,13 @@ import Avatar from '../../components/Avatar/Avatar';
 
 const router = new Router('root');
 
-UserController.getUser();
-
 const templateProfileData = [
-    {
-        item: 'Почта',
-        id: 'email',
-    },
+    { item: 'Почта', id: 'email' },
     { item: 'Логин', id: 'login' },
     { item: 'Имя', id: 'first_name' },
     { item: 'Фамилия', id: 'second_name' },
-    {
-        item: 'Имя в чате',
-        id: 'display_name',
-    },
-    {
-        item: 'Телефон',
-        id: 'phone',
-    },
+    { item: 'Имя в чате', id: 'display_name' },
+    { item: 'Телефон', id: 'phone' },
 ];
 
 const profileData = templateProfileData.map((i) => {

@@ -1,6 +1,5 @@
 export default class Validation {
-    password = (value: string): boolean =>
-        /^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,40}$/.test(value);
+    password = (value: string): boolean => this.checkEmptyValue(value);
 
     phone = (value: string): boolean =>
         this.checkLength(10, 15, value) && /^[+]?[0-9]+$/.test(value) && this.checkEmptyValue(value);
@@ -13,7 +12,7 @@ export default class Validation {
     login = (value: string): boolean =>
         this.checkLength(3, 20, value) && /^[A-Za-z0-9_-]+$/.test(value) && !this.checkValueOnNumbers(value);
 
-    names = (value: string): boolean => /^[A-ZА-Я]+[A-Za-zа-яА-Я-]+$/.test(value) && this.checkEmptyValue(value);
+    names = (value: string): boolean => this.checkEmptyValue(value);
 
     confirmPassword = (input: HTMLInputElement, value: string): boolean => {
         const form = input.closest('form') as HTMLFormElement;

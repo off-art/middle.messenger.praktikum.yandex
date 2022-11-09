@@ -9,7 +9,7 @@ export default class InfoBlock extends Block<IInfoBlock> {
         return this.compile(tpl, {
             item: this.props.item,
             info: this.props.info,
-            classNames: this.props.classNames,
+            className: this.props.className,
         });
     }
 }

@@ -60,7 +60,7 @@ export interface IAvatar {
 export interface IInfoBlock {
     item: string;
     info?: string;
-    classNames: string
+    className: string
 }
 
 export interface IMessage {
@@ -80,7 +80,7 @@ export interface ISignForm {
     submitSubName: string;
     routeSubName: string;
     forms: any;
-    id: number;
+    id: string;
 }
 
 export interface ILoginFormModel {

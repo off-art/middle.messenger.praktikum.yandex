@@ -9,7 +9,7 @@ const router = new Router('root');
 
 export class LoginController {
     static login(data: ILoginFormModel) {
-        LoginAPI.request(data).then((response: any) => {
+        LoginAPI.request(data).then(async (response: any) => {
             if (response.status === 200) {
                 UserAPI.request().then((responseData: any) => {
                     if (responseData.status === 200) {
@@ -17,11 +17,13 @@ export class LoginController {
                         UserChatController.getAllChats();
                         router.go('/messenger');
                     } else {
-                        window.alert('Ошибка авторизации');
+                        window.alert(JSON.parse(response.response).reason);
                     }
                 });
+            } else if (JSON.parse(response.response).reason === 'User already in system') {
+                router.go('/messenger');
             } else {
-                window.alert('Ошибка авторизации');
+                window.alert(JSON.parse(response.response).reason);
             }
         });
     }
