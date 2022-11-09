@@ -1,17 +1,10 @@
-import { TPropsDefault } from '../../utils/Interfaces';
+import { IFormInput } from '../../utils/Interfaces';
 import { tpl } from './FormInput.tpl';
 import Block from '../../utils/Block';
 
 import './FormInput.less';
 
-type TProps = {
-    name: string;
-    id: string;
-    type: string;
-    required: boolean;
-} & TPropsDefault;
-
-export default class FormInput extends Block<TProps> {
+export default class FormInput extends Block<IFormInput> {
     render() {
         return this.compile(tpl, {
             name: this.props.name,

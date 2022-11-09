@@ -1,15 +1,10 @@
-import { TPropsDefault } from '../../utils/Interfaces';
+import { IInfoBlock } from '../../utils/Interfaces';
 import { tpl } from './InfoBlock.tpl';
 import Block from '../../utils/Block';
 
 import './InfoBlock.less';
 
-type TProps = {
-    item: string;
-    info?: string;
-} & TPropsDefault;
-
-export default class InfoBlock extends Block<TProps> {
+export default class InfoBlock extends Block<IInfoBlock> {
     render() {
         return this.compile(tpl, {
             item: this.props.item,

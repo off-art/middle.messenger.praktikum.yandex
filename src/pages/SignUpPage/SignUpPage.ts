@@ -2,7 +2,7 @@ import FormInput from '../../components/FormInput/FormInput';
 import SignForm from '../../containers/SignForm/SignForm';
 import Wrapper from '../../layout/Wrapper/Wrapper';
 import Validation from '../../utils/Validation';
-import { ITempObj } from '../../utils/Interfaces';
+import { UserSignUpController } from '../../controllers/signup.ctrl';
 
 const validation = new Validation();
 
@@ -76,10 +76,12 @@ const SignUpPage = new Wrapper({
                 const target = event.target as HTMLFormElement;
                 if (validation.check(target)) {
                     const inputFields = target.querySelectorAll('[data-required=true]');
-                    const data: ITempObj = {};
+                    const data: any = {};
                     inputFields.forEach((current: HTMLInputElement) => {
                         data[current.id] = current.value;
                     });
+                    delete data.confirm_password;
+                    UserSignUpController.registration(data);
                 }
             },
         },
