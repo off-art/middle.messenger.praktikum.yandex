@@ -1,9 +1,9 @@
+import { BaseApi } from './Base.api';
 import HTTPTransport from '../utils/HTTPTransport';
-import { BaseAPI } from './BaseApi';
 
 const loginAPITransport = new HTTPTransport('https://ya-praktikum.tech/api/v2/auth/');
 
-export class LoginAPI extends BaseAPI {
+export class LoginAPI extends BaseApi {
     static request(data: unknown) {
         return loginAPITransport.post('signin', {
             credentials: 'include',

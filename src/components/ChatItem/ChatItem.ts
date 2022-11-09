@@ -1,4 +1,4 @@
-import { TPropsDefault } from '../../utils/Interfaces';
+import { IChat, TPropsDefault } from '../../utils/Interfaces';
 import Block from '../../utils/Block';
 import { tpl } from './ChatItem.tpl';
 import { connect } from '../../utils/highOrderComponents';
@@ -9,7 +9,7 @@ import Handlebars from 'handlebars';
 import './ChatItem.less';
 
 type TProps = {
-    chats: any;
+    chats: IChat[];
 } & TPropsDefault;
 
 Handlebars.registerHelper('getTime', (value) => new Date(value).toLocaleTimeString());

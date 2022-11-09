@@ -1,17 +1,10 @@
 import { tpl } from './SignForm.tpl';
 import Block from '../../utils/Block';
-import { TPropsDefault } from '../../utils/Interfaces';
+import { ISignForm, TPropsDefault } from '../../utils/Interfaces';
 
 import './SignForm.less';
 
-type TProps = {
-    formName: string;
-    submitName: string;
-    submitSubName: string;
-    routeSubName: string;
-} & TPropsDefault;
-
-export default class SignForm extends Block<TProps> {
+export default class SignForm extends Block<ISignForm & TPropsDefault> {
     render() {
         return this.compile(tpl, {
             forms: this.props.forms,

@@ -30,14 +30,17 @@ export class UserChatController {
         ChatApi.addUsers(data);
     }
 
-    static createChat(input: HTMLInputElement) {
+    static createChat() {
+        const chatName = window.prompt('Введите имя нового чата');
+        if (!chatName) {
+            return;
+        }
         const data = {
-            title: input.value,
+            title: chatName,
         };
         ChatApi.create(data).then((response: any) => {
             if (response.status === 200) {
                 this.getAllChats();
-                input.value = '';
             }
         });
     }

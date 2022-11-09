@@ -46,7 +46,6 @@ export default class HTTPTransport {
         } as IOptionsTransfer);
 
     post = (url: string, options = {}) =>
-        // console.log(`${this._instance}${url}`, options);
         this.request(`${this._instance}${url}`, {
             ...options,
             method: this.METHODS.POST,

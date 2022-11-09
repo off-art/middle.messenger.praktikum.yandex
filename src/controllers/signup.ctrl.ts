@@ -2,17 +2,9 @@ import { SignUpAPI } from '../api/SignUp.api';
 import Router from '../utils/Router';
 import { UserAPI } from '../api/User.api';
 import store from '../utils/store';
+import { RegFormModel } from '../utils/Interfaces';
 
 const router = new Router('root');
-
-interface RegFormModel {
-    email: string;
-    login: string;
-    first_name: string;
-    second_name: string;
-    phone: string;
-    password: string;
-}
 
 export class UserSignUpController {
     static registration(data: RegFormModel) {
@@ -23,11 +15,11 @@ export class UserSignUpController {
                         store.set('user', JSON.parse(responseData.responseText));
                         router.go('/messenger');
                     } else {
-                        window.alert('Ошибка запроса данных пользователя');
+                        window.alert(JSON.parse(response.response).reason);
                     }
                 });
             } else {
-                window.alert('Ошибка регистрации');
+                window.alert(JSON.parse(response.response).reason);
             }
         });
     }

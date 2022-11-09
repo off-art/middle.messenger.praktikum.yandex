@@ -31,12 +31,41 @@
         padding: 14px 10px;
         border-bottom: 1px solid @color-whisper;
 
-        button {
-            margin: 6px 0 21px 0;
-            background: transparent;
-            width: 70px;
-            align-self: end;
-            color: @color-dark-gray;
+        &-btnBlock {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__addChat {
+                background: @color-royal-blue;
+                width: 28px;
+                height: 28px;
+                color: white;
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+
+            &__profile {
+                margin: 6px 0 12px 0;
+                background: transparent;
+                width: 70px;
+                height: 28px;
+                align-self: end;
+                color: @color-dark-gray;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &__profile:after {
+                content: '\279C';
+                color: @color-dark-gray;
+                font-size: 15px;
+                margin-left: 5px;
+            }
         }
 
         input {
@@ -45,45 +74,16 @@
             height: 32px;
             text-align: center;
 
+
             &::placeholder {
                 text-align: center;
                 color: @color-dark-gray;
             }
         }
     }
-
     &-body {
         overflow-y: auto;
         flex: 1;
-    }
-    &-footer {
-        border-top: 1px solid #eaeaea;
-        height: 55px;
-        padding: 10px;
-        font-size: 16px;
-        background: #efefef;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        input {
-            margin-right: 10px;
-            font-size: 16px;
-            line-height: 28px;
-            border-radius: 10px;
-            width: 80%;
-            padding-left: 7px;
-        }
-        button {
-            background: @color-royal-blue;
-            width: 28px;
-            height: 28px;
-            color: white;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
     }
 }
 
@@ -133,13 +133,16 @@
             font-weight: 600;
             display: flex;
             align-items: center;
-            font-size: 26px;
-            width: 40px;
+            font-size: 15px;
+            width: 25px;
+            height: 25px;
             cursor: pointer;
             justify-content: center;
             position: relative;
             &:hover {
                 background: @color-whisper;
+                border-radius: 50%;
+                color: @color-royal-blue;
 
                 .chats-messages--head-option-hide {
                     opacity: 1;
@@ -147,23 +150,66 @@
                 }
             }
 
+            &-add {
+                border-radius: 12px 12px 0 0;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+            }
+            &-add:before {
+                content: "\002B";
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 25px;
+                height: 25px;
+                color: @color-royal-blue;
+                font-size: 20px;
+                margin-right: 15px;
+                border: 2px solid @color-royal-blue;
+                border-radius: 50%;
+            }
+
+            &-delete-user {
+                border-radius: 0 0 12px 12px ;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+            }
+
+            &-delete-user:before {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 25px;
+                height: 25px;
+                content: "\2715";
+                border: 2px solid @color-royal-blue;
+                border-radius: 50%;
+                font-size: 15px;
+                margin-right: 15px;
+                color: @color-royal-blue;
+            }
+
             &-hide {
                 font-size: 16px;
                 opacity: 0;
                 display: none;
                 position: absolute;
-                border-radius: 5px;
-                border: 1px solid @color-dark-gray;
-                top: 33px;
-                right: 0;
+                background: @color-white;
+                box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+                border-radius: 12px;
+                top: 20px;
+                right: 10px;
                 font-weight: 300;
-                background: white;
                 z-index: 1000;
                 div {
+                    color: @color-black;
                     width: 230px;
                     padding: 10px;
+                    font-size: 12px;
                     &:hover {
-                        background: @color-whisper;
+                        background: @color-light-blue;
                     }
                 }
             }
