@@ -1,9 +1,9 @@
+import { BaseApi } from './Base.api';
 import HTTPTransport from '../utils/HTTPTransport';
-import { BaseAPI } from './BaseApi';
 
 const changeUserInfoAPIInstance = new HTTPTransport('https://ya-praktikum.tech/api/v2/user/');
 
-export class ChangeUserInfoAPI extends BaseAPI {
+export class ChangeUserInfoAPI extends BaseApi {
     static change(data: any) {
         return changeUserInfoAPIInstance
             .put('profile', {

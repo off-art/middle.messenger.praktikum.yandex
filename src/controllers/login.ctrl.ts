@@ -3,16 +3,12 @@ import Router from '../utils/Router';
 import { UserAPI } from '../api/User.api';
 import store from '../utils/store';
 import { UserChatController } from './chats.ctrl';
+import { ILoginFormModel } from '../utils/Interfaces';
 
 const router = new Router('root');
 
-interface LoginFormModel {
-    login: string;
-    password: string;
-}
-
 export class LoginController {
-    static login(data: LoginFormModel) {
+    static login(data: ILoginFormModel) {
         LoginAPI.request(data).then((response: any) => {
             if (response.status === 200) {
                 UserAPI.request().then((responseData: any) => {

@@ -1,5 +1,5 @@
+import { BaseApi } from './Base.api';
 import HTTPTransport from '../utils/HTTPTransport';
-import { BaseAPI } from './BaseApi';
 
 const chatAPIInstance = new HTTPTransport('https://ya-praktikum.tech/api/v2/chats');
 
@@ -8,7 +8,7 @@ type DataUsersType = {
     users: number[];
 };
 
-export class ChatApi extends BaseAPI {
+export class ChatApi extends BaseApi {
     static create(data: unknown) {
         return chatAPIInstance.post('', {
             credentials: 'include',

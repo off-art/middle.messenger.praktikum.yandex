@@ -1,4 +1,4 @@
-export class BaseAPI {
+export class BaseApi {
     create(): Promise<unknown> {
         throw new Error('Not implemented');
     }

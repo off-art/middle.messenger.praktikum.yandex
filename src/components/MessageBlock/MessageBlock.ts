@@ -1,6 +1,6 @@
 import { tpl } from './MessageBlock.tpl';
 import Block from '../../utils/Block';
-import { TPropsDefault } from '../../utils/Interfaces';
+import { IMessage, TPropsDefault } from '../../utils/Interfaces';
 import store from '../../utils/store';
 import { connect } from '../../utils/highOrderComponents';
 import Handlebars from 'handlebars';
@@ -8,7 +8,7 @@ import Handlebars from 'handlebars';
 import './MessageBlock.less';
 
 type TProps = {
-    messages: any;
+    messages: IMessage[];
 } & TPropsDefault;
 
 Handlebars.registerHelper('isAuthor', (value) => value === store.getState().user?.id);
