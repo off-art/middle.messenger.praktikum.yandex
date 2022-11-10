@@ -164,20 +164,43 @@
 
             &-add {
                 border-radius: 12px 12px 0 0;
+                display: flex;
+                justify-content: start;
+                align-items: center;
             }
             &-add:before {
-                content: "✅";
-                color: red;
-                margin-right: 10px;
+                content: "\002B";
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 25px;
+                height: 25px;
+                color: @color-royal-blue;
+                font-size: 20px;
+                margin-right: 15px;
+                border: 2px solid @color-royal-blue;
+                border-radius: 50%;
             }
 
             &-delete-user {
                 border-radius: 0 0 12px 12px ;
+                display: flex;
+                justify-content: start;
+                align-items: center;
             }
 
             &-delete-user:before {
-                content: "❌";
-                margin-right: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 25px;
+                height: 25px;
+                content: "\2715";
+                border: 2px solid @color-royal-blue;
+                border-radius: 50%;
+                font-size: 15px;
+                margin-right: 15px;
+                color: @color-royal-blue;
             }
 
             &-hide {
@@ -196,8 +219,8 @@
                     color: @color-black;
                     width: 230px;
                     padding: 10px;
+                    font-size: 12px;
                     &:hover {
-
                         background: @color-light-blue;
                     }
                 }
