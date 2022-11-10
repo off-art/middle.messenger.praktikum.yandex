@@ -31,22 +31,41 @@
         padding: 14px 10px;
         border-bottom: 1px solid @color-whisper;
 
-        button {
-            margin: 6px 0 21px 0;
-            background: transparent;
-            width: 70px;
-            align-self: end;
-            color: @color-dark-gray;
+        &-btnBlock {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-        }
 
-        button:after {
-            content: '\279C';
-            color: @color-dark-gray;
-            font-size: 15px;
-            margin-left: 5px;
+            &__addChat {
+                background: @color-royal-blue;
+                width: 28px;
+                height: 28px;
+                color: white;
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+
+            &__profile {
+                margin: 6px 0 12px 0;
+                background: transparent;
+                width: 70px;
+                height: 28px;
+                align-self: end;
+                color: @color-dark-gray;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &__profile:after {
+                content: '\279C';
+                color: @color-dark-gray;
+                font-size: 15px;
+                margin-left: 5px;
+            }
         }
 
         input {
@@ -66,37 +85,6 @@
         overflow-y: auto;
         flex: 1;
     }
-    &-footer {
-        border-top: 1px solid #eaeaea;
-        height: 55px;
-        padding: 10px;
-        font-size: 16px;
-        background: #efefef;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        input {
-            margin-right: 10px;
-            font-size: 16px;
-            line-height: 28px;
-            border-radius: 10px;
-            width: 80%;
-            padding-left: 7px;
-        }
-        button {
-            background: @color-royal-blue;
-            width: 28px;
-            height: 28px;
-            color: white;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-    }
-
-
 }
 
 .chats-messages {

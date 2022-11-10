@@ -1,5 +1,5 @@
 export const tpl = `        
-            <div class='message-typing-form-files'></div>
+            <div class='message-typing-form-submit message-typing-form-staple'></div>
             <input
                 class='message-typing-form-input'
                 placeholder='Сообщение'
