@@ -46,9 +46,8 @@ const ChatsPage = new ChatsWithState({
                 const router = new Router('root');
                 router.go('/profile');
             }
-            if (target.id === 'chats-footer--btn') {
-                const newChat = document.getElementById('chats-footer--inp') as HTMLInputElement;
-                if (newChat.value) UserChatController.createChat(newChat);
+            if (target.id === 'chats-header--btn') {
+                UserChatController.createChat();
             }
             if (target.classList.contains('chats-messages--head-option-delete')) {
                 UserChatController.deleteChat();
