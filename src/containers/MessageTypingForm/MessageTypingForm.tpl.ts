@@ -6,5 +6,5 @@ export const tpl = `
                 data-required='true'
                 id='message'
             />
-            <input type='submit' class='message-typing-form-submit' value='➜'>      
+            <input type="button" class='message-typing-form-submit' value='➜'>      
 `;

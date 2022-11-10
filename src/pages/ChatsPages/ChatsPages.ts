@@ -12,6 +12,7 @@ import { ChatController } from '../../controllers/message.ctrl';
 import { connect } from '../../utils/highOrderComponents';
 
 import './ChatsPages.less';
+import store from '../../utils/store';
 
 type TProps = {} & TPropsDefault;
 
@@ -57,6 +58,15 @@ const ChatsPage = new ChatsWithState({
             }
             if (target.classList.contains('chats-messages--head-option-add')) {
                 UserChatController.addUserFromChat();
+            }
+            if (target.classList.contains('chats-header-btnBlock__lope')) {
+                const { value } = document.querySelector('.chats-header-btnBlock__input') as HTMLInputElement;
+                store.set(
+                    'filteredChats',
+                    store
+                        .getState()
+                        .chats.filter((chat: any) => chat.title.toLowerCase().includes(value.toLowerCase())),
+                );
             }
         },
     },

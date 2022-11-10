@@ -36,6 +36,27 @@
             justify-content: space-between;
             align-items: center;
 
+            &__lope {
+                cursor: pointer;
+                background: @color-royal-blue;
+                height: 32px;
+                width: 32px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &__search {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                input {
+                    flex: 1;
+                    margin-right: 10px;
+                }
+            }
+
             &__addChat {
                 background: @color-royal-blue;
                 width: 28px;
@@ -73,7 +94,6 @@
             border-radius: 5px;
             height: 32px;
             text-align: center;
-
 
             &::placeholder {
                 text-align: center;
@@ -113,7 +133,6 @@
         display: flex;
         padding-bottom: 10px;
 
-
         &-logo {
             width: 34px;
             height: 34px;
@@ -150,45 +169,35 @@
                 }
             }
 
-            &-add {
-                border-radius: 12px 12px 0 0;
-                display: flex;
-                justify-content: start;
-                align-items: center;
-            }
-            &-add:before {
-                content: "\002B";
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 25px;
-                height: 25px;
-                color: @color-royal-blue;
-                font-size: 20px;
-                margin-right: 15px;
-                border: 2px solid @color-royal-blue;
-                border-radius: 50%;
-            }
-
-            &-delete-user {
-                border-radius: 0 0 12px 12px ;
+            &-delete-user, &-delete, &-add {
+                //border-radius: 0 0 12px 12px;
                 display: flex;
                 justify-content: start;
                 align-items: center;
             }
 
-            &-delete-user:before {
+            &-delete-user:before, &-delete:before, &-add:before {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 25px;
                 height: 25px;
-                content: "\2715";
+                content: '\2715';
                 border: 2px solid @color-royal-blue;
                 border-radius: 50%;
                 font-size: 15px;
                 margin-right: 15px;
                 color: @color-royal-blue;
+            }
+
+            &-delete:before {
+                content: '\2715';
+                color: @color-red;
+                border-color: @color-red;
+            }
+
+            &-add:before {
+                content: '\002B';
             }
 
             &-hide {
@@ -203,6 +212,7 @@
                 right: 10px;
                 font-weight: 300;
                 z-index: 1000;
+                overflow: hidden;
                 div {
                     color: @color-black;
                     width: 230px;

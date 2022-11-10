@@ -5,6 +5,7 @@ import { connect } from '../../utils/highOrderComponents';
 import { UserController } from '../../controllers/profile.ctrl';
 import Router from '../../utils/Router';
 import Avatar from '../../components/Avatar/Avatar';
+import { BASE_URL } from '../../api/Base.api';
 
 const router = new Router('root');
 
@@ -68,7 +69,7 @@ const settingsData = templateSettingsData.map(
 );
 
 const ProfileWrapState = connect((state) => ({
-    url: `https://ya-praktikum.tech/api/v2/resources${state.user?.avatar}`,
+    url: `${BASE_URL}/resources${state.user?.avatar}`,
 }));
 
 const ProfileWithState = ProfileWrapState(Avatar);

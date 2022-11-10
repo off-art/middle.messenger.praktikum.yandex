@@ -57,10 +57,10 @@ export const set = (object: Indexed | unknown, path: string, value: unknown): In
 };
 
 const isPlainObject = (value: unknown): value is PlainObject =>
-    typeof value === 'object'
-    && value !== null
-    && value.constructor === Object
-    && Object.prototype.toString.call(value) === '[object Object]';
+    typeof value === 'object' &&
+    value !== null &&
+    value.constructor === Object &&
+    Object.prototype.toString.call(value) === '[object Object]';
 
 const isArray = (value: unknown): value is [] => Array.isArray(value);
 
