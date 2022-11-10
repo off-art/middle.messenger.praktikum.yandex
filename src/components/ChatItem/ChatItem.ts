@@ -25,7 +25,7 @@ class ChatItems extends Block<TProps> {
 const tempCI = [{}];
 
 const ChatItemsWrapState = connect((state) => ({
-    chats: state.chats,
+    chats: state.filteredChats,
 }));
 
 const ChatItemsWithState = ChatItemsWrapState(ChatItems);

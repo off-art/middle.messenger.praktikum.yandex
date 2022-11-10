@@ -15,3 +15,5 @@ export class BaseApi {
         throw new Error('Not implemented');
     }
 }
+
+export const BASE_URL = 'https://ya-praktikum.tech/api/v2';

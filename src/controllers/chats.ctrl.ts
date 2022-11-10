@@ -38,11 +38,15 @@ export class UserChatController {
         const data = {
             title: chatName,
         };
-        ChatApi.create(data).then((response: any) => {
-            if (response.status === 200) {
-                this.getAllChats();
-            }
-        });
+        ChatApi.create(data)
+            .then((response: any) => {
+                if (response.status === 200) {
+                    this.getAllChats();
+                }
+            })
+            .catch((error: any) => {
+                window.alert(error.reason || 'Ошибка ответа от сервера');
+            });
     }
 
     static deleteChat() {
@@ -52,20 +56,34 @@ export class UserChatController {
         const data = {
             chatId: store.getState().active.chat.id,
         };
-        ChatApi.delete(data).then((response: any) => {
-            if (response.status === 200) {
-                const wrapper = document.querySelector('.chats-wrapper') as HTMLElement;
-                wrapper.classList.remove('active');
-                this.getAllChats();
-            }
-        });
+        ChatApi.delete(data)
+            .then((response: any) => {
+                if (response.status === 200) {
+                    const wrapper = document.querySelector('.chats-wrapper') as HTMLElement;
+                    wrapper.classList.remove('active');
+                    this.getAllChats();
+                }
+            })
+            .catch((error: any) => {
+                window.alert(error.reason || 'Ошибка ответа от сервера');
+            });
     }
 
     static getAllChats() {
-        return ChatApi.request().then((response: any) => {
-            store.set('chats', JSON.parse(response.responseText));
-            return JSON.parse(response.responseText);
-        });
+        return ChatApi.request()
+            .then((response: any) => {
+                try {
+                    const data = JSON.parse(response.responseText);
+                    store.set('chats', data);
+                    store.set('filteredChats', data);
+                    return data;
+                } catch {
+                    window.alert('Ошибка извлечения данных');
+                }
+            })
+            .catch((error: any) => {
+                window.alert(error.reason || 'Ошибка ответа от сервера');
+            });
     }
 
     static setActiveChat(chatItem: HTMLElement, userId?: string) {

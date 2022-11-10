@@ -21,7 +21,6 @@ class Router {
 
     private _onNotRouteCallback: () => void;
 
-
     constructor(rootQuery: string) {
         if (Router.__instance) {
             // eslint-disable-next-line no-constructor-return

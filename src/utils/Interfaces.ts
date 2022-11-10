@@ -7,29 +7,29 @@ export type TPropsDefault = {
 };
 
 export interface IUser {
-    avatar: string
-    display_name: string,
-    email: string,
-    first_name: string,
-    login: string,
-    phone: string,
-    second_name: string,
+    avatar: string;
+    display_name: string;
+    email: string;
+    first_name: string;
+    login: string;
+    phone: string;
+    second_name: string;
 }
 
 export interface ILastMessage {
-    content: string,
-    id: number,
-    time: string,
-    user: IUser
+    content: string;
+    id: number;
+    time: string;
+    user: IUser;
 }
 
 export interface IChat {
-    avatar: string | null,
-    created_by: number,
-    id: number,
-    title: string,
-    unread_count: number
-    last_message: ILastMessage
+    avatar: string | null;
+    created_by: number;
+    id: number;
+    title: string;
+    unread_count: number;
+    last_message: ILastMessage;
 }
 
 export interface IFormInput {
@@ -49,7 +49,7 @@ export interface IChangeInfoBlock {
     info: string;
     id: string;
     type: string;
-    className: string,
+    className: string;
     required: boolean;
 }
 
@@ -60,18 +60,18 @@ export interface IAvatar {
 export interface IInfoBlock {
     item: string;
     info?: string;
-    className: string
+    className: string;
 }
 
 export interface IMessage {
-    chat_id: number,
-    content: string,
-    file: null
-    id: number
-    is_read: boolean,
-    time: string,
-    type: string,
-    user_id: number
+    chat_id: number;
+    content: string;
+    file: null;
+    id: number;
+    is_read: boolean;
+    time: string;
+    type: string;
+    user_id: number;
 }
 
 export interface ISignForm {

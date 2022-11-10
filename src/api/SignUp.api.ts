@@ -1,7 +1,7 @@
-import { BaseApi } from './Base.api';
+import { BASE_URL, BaseApi } from './Base.api';
 import HTTPTransport from '../utils/HTTPTransport';
 
-const signupAPIInstance = new HTTPTransport('https://ya-praktikum.tech/api/v2/auth/');
+const signupAPIInstance = new HTTPTransport(`${BASE_URL}/auth/`);
 
 export class SignUpAPI extends BaseApi {
     static create(data: unknown) {

@@ -1,7 +1,7 @@
-import { BaseApi } from './Base.api';
+import { BaseApi, BASE_URL } from './Base.api';
 import HTTPTransport from '../utils/HTTPTransport';
 
-const changeUserInfoAPIInstance = new HTTPTransport('https://ya-praktikum.tech/api/v2/user/');
+const changeUserInfoAPIInstance = new HTTPTransport(`${BASE_URL}/user/`);
 
 export class ChangeUserInfoAPI extends BaseApi {
     static change(data: any) {

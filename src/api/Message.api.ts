@@ -1,7 +1,7 @@
-import { BaseApi } from './Base.api';
+import { BASE_URL, BaseApi } from './Base.api';
 import HTTPTransport from '../utils/HTTPTransport';
 
-const chatMessagesAPIInstance = new HTTPTransport('https://ya-praktikum.tech/api/v2/chats/token');
+const chatMessagesAPIInstance = new HTTPTransport(`${BASE_URL}/chats/token`);
 
 export class ChatMessagesAPI extends BaseApi {
     static request(id: string) {

@@ -53,9 +53,6 @@ const profileData = templateData.map((i) => {
         required: true,
         type: i.id === 'phone' ? 'tel' : 'text',
         events: {
-            focus: (event: Event) => {
-                validation.hideError(event.target as HTMLInputElement);
-            },
             blur: (event: Event) => {
                 const target = event.target as HTMLInputElement;
                 if (target.id === 'login') {
