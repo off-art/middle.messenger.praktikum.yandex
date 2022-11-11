@@ -1,11 +1,10 @@
 export const tpl = `        
-            <div class='message-typing-form-files'></div>
-            <textarea
+            <div class='message-typing-form-submit message-typing-form-staple'></div>
+            <input
                 class='message-typing-form-input'
                 placeholder='Сообщение'
-                rows='1'
                 data-required='true'
                 id='message'
-            ></textarea>
-            <input type='submit' class='message-typing-form-submit' value='>'>      
+            />
+            <input type="button" class='message-typing-form-submit' value='➜'>      
 `;

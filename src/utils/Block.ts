@@ -234,11 +234,11 @@ class Block<TProps> {
             if (isArray(child)) {
                 child.forEach((ch: Block<TProps>) => {
                     const stub = fragment.content.querySelector(`[data-id="${ch._id}"]`);
-                    stub.replaceWith(ch.getContent());
+                    stub?.replaceWith(ch.getContent());
                 });
             } else {
                 const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
-                stub.replaceWith(child.getContent());
+                stub?.replaceWith(child.getContent());
             }
         });
         return fragment.content;

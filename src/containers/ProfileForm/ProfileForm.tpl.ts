@@ -1,7 +1,6 @@
 export const tpl = `<div class='profile'>
     <div class='profile--logo'>
-        <div class='profile--img'>img</div>
-        <div class='profile--name'>Иван</div>
+        {{{avatar}}}
     </div>
     <div class='profile--data'>
         {{#each profileData}}

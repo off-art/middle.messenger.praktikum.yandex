@@ -1,27 +1,38 @@
 export const tpl = `<div class='chats-wrapper'>
     <div class='chats'>
         <div class='chats-header'>
-            <button>Профиль ></button>
-            <input type='text' placeholder='Поиск' />
+                <div class="chats-header-btnBlock">
+                    <button class="chats-header-btnBlock__addChat" id='chats-header--btn' title='Добавить новый чат'>+</button>
+                    <button class="chats-header-btnBlock__profile" id='chats-btn-profile' >Профиль</button>
+                </div>
+                <div class="chats-header-btnBlock__search">
+                    <input class="chats-header-btnBlock__input" type='text' placeholder='Введите имя и нажмите на кнопку' />
+                    <div class="chats-header-btnBlock__lope">🔍</div>
+                </div>
+                
+                  
+                
         </div>
         <div class='chats-body'>
-            {{#each chatData}}
-                <div class='chats-body--item'>
-                    {{{this}}}
-                </div>
-            {{/each}}
+            {{{chatsData}}}
         </div>
     </div>
     <div class='chats-messages'>
+    <div class='chats-messages--hide'>Выберите или создайте чат</div>
         <div class='chats-messages--head'>
             <div class='chats-messages--head-logo'></div>
-            <div class='chats-messages--head-name'>Вадим</div>
-            <div class='chats-messages--head-option'>⋮</div>
+            <div class='chats-messages--head-name'>{{chatTitle}}</div>
+            <div class='chats-messages--head-option'>
+           ︙
+            <div class='chats-messages--head-option-hide'>
+                    <div class='chats-messages--head-option-add'>Добавить пользователя</div>
+                    <div class='chats-messages--head-option-delete-user'>Удалить пользователя</div>
+                    <div class='chats-messages--head-option-delete'>Удалить чат</div>
+            </div>
+            </div>
         </div>
         <div class='chats-messages--body'>
-            {{#each messageData}}
-                {{{this}}}
-            {{/each}}
+            {{{messagesData}}}
         </div>
             {{{messageTyping}}}
     </div>

@@ -8,4 +8,4 @@
 
 Макеты Figma: https://www.figma.com/file/lTjtfhp89O2G2tSxPk9Zvm/%D0%A1%D0%90%D0%99%D0%A2?node-id=0%3A1
 
-Netlify: https://practicum-middle-frontend.netlify.app/
+Netlify: https://deploy--practicum-middle-frontend.netlify.app/

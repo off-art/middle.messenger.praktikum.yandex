@@ -4,9 +4,7 @@ import { TPropsDefault } from '../../utils/Interfaces';
 
 import './MessageTypingForm.less';
 
-type TProps = {} & TPropsDefault;
-
-export default class MessageTypingForm extends Block<TProps> {
+export default class MessageTypingForm extends Block<TPropsDefault> {
     render() {
         return this.compile(tpl, {});
     }
