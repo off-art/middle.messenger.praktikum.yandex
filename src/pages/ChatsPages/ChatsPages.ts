@@ -14,7 +14,7 @@ import { connect } from '../../utils/highOrderComponents';
 import './ChatsPages.less';
 import store from '../../utils/store';
 
-type TProps = {} & TPropsDefault;
+export type TProps = {} & TPropsDefault;
 
 class Chats extends Block<TProps> {
     render() {
