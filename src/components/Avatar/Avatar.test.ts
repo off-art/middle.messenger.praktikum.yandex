@@ -29,10 +29,10 @@ describe('Avatar component test', () => {
     });
 
     it('check display component', () => {
-        const modal = new AvatarMock({
-            url: 'testURL',
+        const Avatar = new AvatarMock({
+            url: 'test_URL',
         });
-        render('root', modal);
+        render('root', Avatar);
         expect(document.querySelectorAll('.avatar--img').length).to.eq(1);
     });
 });
