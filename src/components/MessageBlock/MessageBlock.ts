@@ -3,16 +3,16 @@ import Block from '../../utils/Block';
 import { IMessage, TPropsDefault } from '../../utils/Interfaces';
 import store from '../../utils/store';
 import { connect } from '../../utils/highOrderComponents';
-import Handlebars from 'handlebars';
-
 import './MessageBlock.less';
+
+const Handlebars = require('handlebars/dist/cjs/handlebars');
 
 type TProps = {
     messages: IMessage[];
 } & TPropsDefault;
 
-Handlebars.registerHelper('isAuthor', (value) => value === store.getState().user?.id);
-Handlebars.registerHelper('getTime', (value) => new Date(value).toLocaleTimeString());
+Handlebars.registerHelper('isAuthor', (value: string) => value === store.getState().user?.id);
+Handlebars.registerHelper('getTime', (value: string) => new Date(value).toLocaleTimeString());
 
 class MessageBlock extends Block<TProps> {
     render() {
