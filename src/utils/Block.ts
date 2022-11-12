@@ -1,8 +1,10 @@
-import * as Handlebars from 'handlebars';
 import { v4 as makeUUID } from 'uuid';
 import EventBus from './EventBus';
-import isArray = Handlebars.Utils.isArray;
 import { ITempObj } from './Interfaces';
+
+const Handlebars = require('handlebars/dist/cjs/handlebars');
+
+const { isArray } = Handlebars.Utils;
 
 class Block<TProps> {
     static EVENTS = {

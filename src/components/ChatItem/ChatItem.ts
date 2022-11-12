@@ -4,15 +4,15 @@ import { tpl } from './ChatItem.tpl';
 import { connect } from '../../utils/highOrderComponents';
 import { UserChatController } from '../../controllers/chats.ctrl';
 import store from '../../utils/store';
-import Handlebars from 'handlebars';
-
 import './ChatItem.less';
+
+const Handlebars = require('handlebars/dist/cjs/handlebars');
 
 type TProps = {
     chats: IChat[];
 } & TPropsDefault;
 
-Handlebars.registerHelper('getTime', (value) => new Date(value).toLocaleTimeString());
+Handlebars.registerHelper('getTime', (value: string) => new Date(value).toLocaleTimeString());
 
 class ChatItems extends Block<TProps> {
     render() {
